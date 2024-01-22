@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #34495e; /* Background color for the body */
+            color: #ecf0f1; /* Text color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #2c3e50; /* Background color for the container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3498db; /* Header text color */
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #bdc3c7; /* Input border color */
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db; /* Button background color */
+            color: #fff; /* Button text color */
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Button background color on hover */
+        }
+    </style>
+        <script src="script.js" defer></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form>
+            <input type="email" placeholder="Email" id="email">
+            <span id="emailError" class="error"></span>
+
+            <input type="password" placeholder="Password" id="password">
+            <span id="passwordError" class="error"></span>
+
+            <button type="submit" onclick="verification()" >Login</button>
+        </form>
+    </div>
+    <script>
+    function validateAndLogin() {
+        var emailInput = document.getElementById('email');
+        
+    var passwordInput = document.getElementById('password');
+    var emailValue = emailInput.value.trim();
+    var passwordValue = passwordInput.value.trim();
+
+    if (!isValidEmail(emailValue)) {
+        showError('emailError', 'Veuillez saisir une adresse email valide.');
+    }
+    if (passwordValue === '' || passwordValue.length < 8) {
+        showError('your password is wrong');
+    }
+        if (email === 'user@example.com' && password === 'password') {
+            // Store the email in local storage
+            localStorage.setItem('loggedInUser', email);
+
+            alert('succesful login');
+            window.location.href = 'index.html'; 
+        } else {
+            alert('Invalid email or password. Please try again.');
+        }
+    }
+</script>
+
+
+</body>
+</html>
